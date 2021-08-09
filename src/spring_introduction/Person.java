@@ -7,6 +7,14 @@ public class Person {
         this.pet = pet;
     }
 
+    public Person() {
+
+    }
+
+    public void setPet(Pet pet) {
+        this.pet = pet;
+    }
+
     public void callYourPet() {
         System.out.println("Hello!");
         pet.say();
