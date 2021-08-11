@@ -1,30 +1,11 @@
 package spring_introduction;
 
-public class Dog implements Pet{
-    private String name;
+import org.springframework.stereotype.Component;
 
-    public Dog() {
-        System.out.println("Dog bean is created");
-    }
-
+@Component("dogBean")
+public class Dog implements Pet {
     @Override
     public void say() {
         System.out.println("Bow-Wow");
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void init() {
-        System.out.println("Class Dog: Init method");
-    }
-
-    public void destroy() {
-        System.out.println("Class Dog: Destroy method");
     }
 }

@@ -7,16 +7,5 @@
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="myPet"
-          class="spring_introduction.Dog"
-          init-method="init"
-          destroy-method="destroy"
-          scope="prototype">
-    </bean>
-
-    <bean id="myPerson"
-          class="spring_introduction.Person"
-          scope="prototype">
-        <constructor-arg ref="myPet"/>
-    </bean>
+    <context:component-scan base-package="spring_introduction"/>
 </beans>
