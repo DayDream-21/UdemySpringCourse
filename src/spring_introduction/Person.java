@@ -8,8 +8,13 @@ import org.springframework.stereotype.Component;
 public class Person {
     private Pet pet;
 
-    @Autowired
+    /*@Autowired
     public Person(@Qualifier("dogBean") Pet pet) {
+        this.pet = pet;
+    }*/
+
+    @Autowired
+    public void setPet(@Qualifier("dogBean") Pet pet) {
         this.pet = pet;
     }
 
