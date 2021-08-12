@@ -10,6 +10,8 @@ public class Test {
         Person myPerson = context.getBean("personBean", Person.class);
 
         myPerson.callYourPet();
+        System.out.println(myPerson.getName());
+        System.out.println(myPerson.getAge());
 
         context.close();
     }
