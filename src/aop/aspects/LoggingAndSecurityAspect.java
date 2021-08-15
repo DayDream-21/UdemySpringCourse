@@ -8,18 +8,34 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 public class LoggingAndSecurityAspect {
-    @Pointcut("execution(* get*())")
-    private void pointcutForAllGetMethods() {}
-
-    @Before("pointcutForAllGetMethods()")
-    public void beforeGetLoggingAdvice() {
-        System.out.println("beforeGetLoggingAdvice: " +
-                "attempt to get book/magazine");
+    /*@Pointcut("execution(* aop.TownLibrary.get*())")
+    private void allGetMethodsFromTownLibrary() {
     }
 
-    @Before("pointcutForAllGetMethods()")
-    public void beforeGetSecurityAdvice() {
-        System.out.println("beforeGetSecurityAdvice: " +
-                "checking rights to take book/magazine");
+    @Pointcut("execution(* aop.TownLibrary.return*())")
+    private void allReturnMethodsFromTownLibrary() {
+    }
+
+    @Pointcut("allGetMethodsFromTownLibrary() || allReturnMethodsFromTownLibrary()")
+    private void allGetAndReturnMethodsFromTownLibrary() {
+    }*/
+
+    @Pointcut("execution(* aop.TownLibrary.return*()) || execution(* aop.TownLibrary.get*())")
+    private void allGetOrReturnMethodsFromTownLibrary() {
+    }
+
+    /*@Before("allGetMethodsFromTownLibrary()")
+    public void beforeGetLoggingAdvice() {
+        System.out.println("beforeGetLoggingAdvice: writing Log #1");
+    }
+
+    @Before("allReturnMethodsFromTownLibrary()")
+    public void beforeReturnLoggingAdvice() {
+        System.out.println("beforeReturnLoggingAdvice: writing Log #2");
+    }*/
+
+    @Before("allGetOrReturnMethodsFromTownLibrary()")
+    public void beforeGetOrReturnLoggingAdvice() {
+        System.out.println("beforeReturnLoggingAdvice: writing Log #3");
     }
 }

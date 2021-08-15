@@ -11,7 +11,10 @@ public class LibraryTest {
         TownLibrary myTownLibrary = context.getBean("townLibraryBean", TownLibrary.class);
 
         myTownLibrary.getBook();
+        myTownLibrary.returnBook();
         myTownLibrary.getMagazine();
+        myTownLibrary.returnMagazine();
+
 
         context.close();
     }
