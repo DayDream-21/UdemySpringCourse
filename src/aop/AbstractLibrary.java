@@ -8,13 +8,11 @@ public abstract class AbstractLibrary {
 
 @Component("townLibraryBean")
 class TownLibrary extends AbstractLibrary {
-    public void getBook(Book book) {
-        System.out.println("We take book from Town Library. Name: "
-                + book.getName());
+    public void getBook() {
+        System.out.println("We take book from Town Library.");
     }
 
-    public void getMagazine(int idMagazine) {
-        System.out.println("We take magazine from Town Library. ID: "
-                + idMagazine);
+    public void getMagazine() {
+        System.out.println("We take magazine from Town Library.");
     }
 }
