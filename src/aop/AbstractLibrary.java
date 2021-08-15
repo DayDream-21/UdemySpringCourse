@@ -1,38 +1,20 @@
 package aop;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 public abstract class AbstractLibrary {
-    abstract public void getBook();
-    abstract public void returnBook();
 }
 
 @Component("townLibraryBean")
 class TownLibrary extends AbstractLibrary {
-    @Override
-    public void getBook() {
-        System.out.println("We take book from" +
-                " Town Library");
+    public void getBook(Book book) {
+        System.out.println("We take book from Town Library. Name: "
+                + book.getName());
     }
 
-    @Override
-    public void returnBook() {
-        System.out.println("We return book to" +
-                " Town Library");
-    }
-}
-
-@Component("uniLibraryBean")
-class UniLibrary extends AbstractLibrary{
-    @Override
-    public void getBook() {
-        System.out.println("We take a book from" +
-                " University Library");
-    }
-
-    @Override
-    public void returnBook() {
-        System.out.println("We return book to" +
-                " University Library");
+    public void getMagazine(int idMagazine) {
+        System.out.println("We take magazine from Town Library. ID: "
+                + idMagazine);
     }
 }
