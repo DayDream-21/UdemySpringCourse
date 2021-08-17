@@ -1,4 +1,4 @@
-package aop.LibraryExample;
+package aop.libraryExample;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

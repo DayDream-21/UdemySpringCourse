@@ -1,4 +1,4 @@
-package aop.LibraryExample;
+package aop.libraryExample;
 
 import aop.MyConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;

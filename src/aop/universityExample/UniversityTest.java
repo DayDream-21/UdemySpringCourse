@@ -1,5 +1,6 @@
-package aop;
+package aop.universityExample;
 
+import aop.MyConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.List;

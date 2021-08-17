@@ -1,4 +1,4 @@
-package aop;
+package aop.universityExample;
 
 public class Student {
     private String name;

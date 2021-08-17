@@ -1,4 +1,4 @@
-package aop.LibraryExample;
+package aop.libraryExample;
 
 import org.springframework.stereotype.Component;
 
