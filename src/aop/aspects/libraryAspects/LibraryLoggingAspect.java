@@ -1,4 +1,4 @@
-package aop.aspects;
+package aop.aspects.libraryAspects;
 
 import aop.libraryExample.Book;
 import org.aspectj.lang.JoinPoint;

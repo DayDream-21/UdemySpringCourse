@@ -1,4 +1,4 @@
-package aop.aspects;
+package aop.aspects.universityAspects;
 
 import aop.universityExample.Student;
 import org.aspectj.lang.annotation.*;
