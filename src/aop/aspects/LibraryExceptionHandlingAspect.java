@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(2)
-public class SecurityAspect {
+@Order(3)
+public class LibraryExceptionHandlingAspect {
     @Before("aop.aspects.MyPointcuts.allAddMethods()")
-    public void beforeAddSecurityAdvice() {
-        System.out.println("beforeAddSecurityAdvice: " +
-                "checking the rights to get a book/magazine");
+    public void beforeAddExceptionHandlingAdvice() {
+        System.out.println("beforeAddExceptionHandlingAdvice: " +
+                "catch exception from attempt to get a book/magazine");
         System.out.println("----------------------------------------");
     }
 }

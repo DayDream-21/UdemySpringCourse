@@ -1,6 +1,6 @@
 package aop.aspects;
 
-import aop.LibraryExample.Book;
+import aop.libraryExample.Book;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 @Aspect
 @Order(1)
-public class LoggingAspect {
+public class LibraryLoggingAspect {
     @Before("aop.aspects.MyPointcuts.allAddMethods()")
     public void beforeAddLoggingAdvice(JoinPoint joinPoint) {
         MethodSignature methodSignature = (MethodSignature) joinPoint.getSignature();
