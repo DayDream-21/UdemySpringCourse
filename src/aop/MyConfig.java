@@ -7,5 +7,5 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @Configuration
 @ComponentScan("aop")
 @EnableAspectJAutoProxy
-public class LibraryConfig {
+public class MyConfig {
 }
