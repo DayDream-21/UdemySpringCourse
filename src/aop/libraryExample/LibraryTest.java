@@ -5,16 +5,16 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class LibraryTest {
     public static void main(String[] args) {
+        System.out.println("Method main starts");
         AnnotationConfigApplicationContext context =
                 new AnnotationConfigApplicationContext(MyConfig.class);
 
-        Book myBook = context.getBean("bookBean", Book.class);
         TownLibrary myTownLibrary = context.getBean("townLibraryBean", TownLibrary.class);
 
-        myTownLibrary.getBook();
-        myTownLibrary.addBook("Andrew", myBook);
-        myTownLibrary.addMagazine();
+        String bookName = myTownLibrary.returnBook();
+        System.out.println(bookName + " is returned to the library");
 
         context.close();
+        System.out.println("Method main ends");
     }
 }
