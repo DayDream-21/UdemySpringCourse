@@ -1,6 +1,6 @@
 package aop.aspects;
 
-import aop.Book;
+import aop.LibraryExample.Book;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;

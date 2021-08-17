@@ -1,6 +1,5 @@
-package aop;
+package aop.LibraryExample;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 public abstract class AbstractLibrary {
