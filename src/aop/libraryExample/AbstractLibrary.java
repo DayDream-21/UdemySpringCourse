@@ -13,6 +13,8 @@ class TownLibrary extends AbstractLibrary {
     }
 
     public String returnBook() {
+        // Throwing exception
+        // double a = 10 / 0;
         System.out.println("We return book to Town Library");
         return "War and Peace";
     }
