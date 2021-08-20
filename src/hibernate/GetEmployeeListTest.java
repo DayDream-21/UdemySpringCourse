@@ -20,13 +20,13 @@ public class GetEmployeeListTest {
             /*List<Employee> employeeList = session.createQuery("from Employee")
                             .getResultList();*/
 
-            List<Employee> employeeList = session.
+            /*List<Employee> employeeList = session.
                     createQuery("from Employee where name = 'Elena' AND salary > 500").
                     getResultList();
 
             for (Employee employee : employeeList) {
                 System.out.println(employee);
-            }
+            }*/
 
             session.getTransaction().commit();
         }
