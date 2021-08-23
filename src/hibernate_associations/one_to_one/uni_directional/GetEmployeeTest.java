@@ -16,8 +16,11 @@ public class GetEmployeeTest {
             Session session = sessionFactory.getCurrentSession()) {
 
             session.beginTransaction();
-            Employee employee = session.get(Employee.class, 2);
-            System.out.println(employee.getEmployeeDetail());
+            /*Employee employee = session.get(Employee.class, 2);
+            System.out.println(employee.getEmployeeDetail());*/
+
+            Detail detail = session.get(Detail.class, 4);
+            System.out.println(detail.getEmployeeInformation());
 
             session.getTransaction().commit();
         }

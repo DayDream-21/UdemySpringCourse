@@ -5,6 +5,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "details")
 public class Detail {
+    @OneToOne(mappedBy = "employeeDetail",
+            cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
+    private Employee employeeInformation;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -44,6 +48,10 @@ public class Detail {
         this.email = email;
     }
 
+    public void setEmployeeInformation(Employee employeeInformation) {
+        this.employeeInformation = employeeInformation;
+    }
+
     public int getId() {
         return id;
     }
@@ -58,6 +66,10 @@ public class Detail {
 
     public String getEmail() {
         return email;
+    }
+
+    public Employee getEmployeeInformation() {
+        return employeeInformation;
     }
 
     @Override

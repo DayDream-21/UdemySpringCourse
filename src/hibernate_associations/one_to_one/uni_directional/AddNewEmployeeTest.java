@@ -8,19 +8,21 @@ import org.hibernate.cfg.Configuration;
 
 public class AddNewEmployeeTest {
     public static void main(String[] args) {
-
         try (SessionFactory sessionFactory = new Configuration()
                 .configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Employee.class)
                 .addAnnotatedClass(Detail.class)
-                .buildSessionFactory()) {
-            Session session = sessionFactory.getCurrentSession();
-            Employee employee = new Employee("Oleg", "Smirnov",
-                    "HR", 700);
-            Detail detail = new Detail("Moscow", "9855254279",
-                    "oleg_smirnov@gmail.com");
+                .buildSessionFactory();
+        Session session = sessionFactory.getCurrentSession()){
+
+            Employee employee = new Employee("Nikolay", "Ivanov",
+                    "Sales", 620);
+            Detail detail = new Detail("New-York", "9752375478",
+                    "nikIvanov@gmail.com");
 
             employee.setEmployeeDetail(detail);
+            detail.setEmployeeInformation(employee);
+            session.beginTransaction();
 
             session.save(employee);
 
