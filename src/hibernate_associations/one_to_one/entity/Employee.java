@@ -1,4 +1,4 @@
-package hibernate_associations.one_to_one.uni_directional.entity;
+package hibernate_associations.one_to_one.entity;
 
 import javax.persistence.*;
 

@@ -1,7 +1,7 @@
-package hibernate_associations.one_to_one.uni_directional;
+package hibernate_associations.one_to_one;
 
-import hibernate_associations.one_to_one.uni_directional.entity.Detail;
-import hibernate_associations.one_to_one.uni_directional.entity.Employee;
+import hibernate_associations.one_to_one.entity.Detail;
+import hibernate_associations.one_to_one.entity.Employee;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
