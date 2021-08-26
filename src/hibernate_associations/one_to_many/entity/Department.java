@@ -15,23 +15,24 @@ public class Department {
     @Column(name = "name")
     private String departmentName;
 
-    @Column(name = "max_salary")
-    private int maxSalary;
-
     @Column(name = "min_salary")
     private int minSalary;
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH,
-                          CascadeType.REFRESH, CascadeType.MERGE})
+    @Column(name = "max_salary")
+    private int maxSalary;
+
+    @OneToMany(cascade  = CascadeType.ALL,
+               mappedBy = "department",
+               fetch    = FetchType.EAGER)
     private List<Employee> employees;
 
     public Department() {
     }
 
-    public Department(String departmentName, int maxSalary, int minSalary) {
+    public Department(String departmentName, int minSalary, int maxSalary) {
         this.departmentName = departmentName;
-        this.maxSalary = maxSalary;
         this.minSalary = minSalary;
+        this.maxSalary = maxSalary;
     }
 
     public void addEmployeeToDepartment(Employee employee) {
@@ -50,12 +51,12 @@ public class Department {
         return departmentName;
     }
 
-    public int getMaxSalary() {
-        return maxSalary;
-    }
-
     public int getMinSalary() {
         return minSalary;
+    }
+
+    public int getMaxSalary() {
+        return maxSalary;
     }
 
     public List<Employee> getEmployees() {
@@ -70,12 +71,12 @@ public class Department {
         this.departmentName = departmentName;
     }
 
-    public void setMaxSalary(int maxSalary) {
-        this.maxSalary = maxSalary;
-    }
-
     public void setMinSalary(int minSalary) {
         this.minSalary = minSalary;
+    }
+
+    public void setMaxSalary(int maxSalary) {
+        this.maxSalary = maxSalary;
     }
 
     public void setEmployees(List<Employee> employees) {
@@ -89,6 +90,6 @@ public class Department {
                 ", departmentName='" + departmentName + '\'' +
                 ", maxSalary=" + maxSalary +
                 ", minSalary=" + minSalary +
-                '}';
+                "}";
     }
 }
